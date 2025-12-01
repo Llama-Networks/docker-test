@@ -84,6 +84,38 @@
       letter-spacing: -0.03em;
     }
 
+    .brand-row {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: clamp(12px, 2vw, 22px);
+      margin-bottom: 0.2rem;
+    }
+
+    .brand-logo {
+      height: clamp(46px, 7vw, 64px);
+      width: auto;
+      display: block;
+      filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.25));
+    }
+
+    .brand-logo--docker {
+      height: clamp(52px, 8vw, 70px);
+    }
+
+    .brand-logo--peplink {
+      height: clamp(54px, 8vw, 74px);
+    }
+
+    .brand-plus {
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      font-weight: 800;
+      color: var(--text);
+      line-height: 1;
+      text-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+      padding: 0 0.1rem;
+    }
+
     p {
       margin: 0 0 1.6rem;
       font-size: 1.05rem;
@@ -101,6 +133,7 @@
       color: var(--text);
       font-weight: 700;
       letter-spacing: 0.02em;
+      margin-bottom: clamp(1.1rem, 2vw, 1.6rem);
     }
 
     .pulse {
@@ -152,8 +185,14 @@
     <div class="grid"></div>
     <div class="content">
       <div class="tag"><span class="pulse"></span> Docker is working!</div>
-      <h1>Your container is live and serving over HTTP.</h1>
-      <p>If you are reading this, the Docker build and run steps succeeded.</p>
+      <h1>
+        <span class="brand-row" aria-label="Docker plus Peplink">
+          <img src="docker-mark-blue.svg" alt="Docker" class="brand-logo brand-logo--docker">
+          <span class="brand-plus">+</span>
+          <img src="peplink.png" alt="Peplink" class="brand-logo brand-logo--peplink">
+        </span>
+      </h1>
+      <p>This page is being served live from a Peplink device running Docker.</p>
       <a class="cta" href="http://localhost:8080" aria-label="Reload the page">Refresh page</a>
     </div>
   </div>
